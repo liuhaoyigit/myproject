@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+var a = new Object();
+a.name = '魏生津'
+a.age = 180
+a.say=function(){
+    console.log('陈昊天大傻逼')
+}
+console.log(a)
+a.say()
+
+var b = {
+    name : '侯辟谷',
+    age : 150,
+    say:function(){
+       console.log('陈昊天大傻X')
+    }
+}
+console.log(b)
+b.say()
+
+var c = Object.create(a)
+c.genter = 'male'               //c对象添加了genter
+console.log(c)
+console.log(c.name)
+c.say()
+a.name='史珍香'         //c.__proto__='史珍香'
+console.log(c.name)     //史珍香
+
+var d1 = Object.create(null); //d为纯空对象没有__proto__
+console.log(d1)
+
+var d2 = {};
+console.log(d2)    //e有一个__proto__
+
+var d3 = Object.create({});
+console.log(d3)    //f下的__proto__有一个__proto__
+
+var d4 = Object.create(Object.prototype);
+console.log(d4)   //形式上和d2相同
+
+
+</script>
+</html>
